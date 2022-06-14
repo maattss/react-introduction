@@ -1,15 +1,19 @@
-# React introdcuction project
-
+# React introduction project 🚀
+Starter project for a React app using:
 - React 18
 - Vite
 - Typescript
 - Yarn package manager
 
-## What to cover
+## Essential topics 📚
 
-- General overview
+- What is React? A JavaScript library for building user interfaces
+  - Main concepts: https://reactjs.org/docs/hello-world.html
   - React tutorial: https://reactjs.org/tutorial/tutorial.html
-- UseState
-- UseEffect
-- Formatting and linting (Eslint and Prettier)
-- Ui library (Equinor Design System)
+- Componentes and properties (props)
+- Formatting and linting (using Eslint and Prettier)
+- State (`UseState` hook)
+- Conditional rendering (`UseEffect` hook)
+- Rendering lists 
+- Component libraries (E.g. [Equinor Design System](https://eds-storybook-react.azurewebsites.net/))
+- Data fetching (using [Swr](https://swr.vercell.app) and [DummyJSON](https://dummyjson.com))
