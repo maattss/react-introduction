@@ -16,7 +16,7 @@ function App() {
           </button>
         </p>
         <p>
-          Edit <code>App.tsx</code>
+          Change page by editinggg <code>App.tsx</code>
         </p>
         <p>
           <a
