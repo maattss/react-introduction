@@ -6,7 +6,7 @@ Starter project for a React app using:
 - Yarn package manager
 
 ## Essential topics 📚
-- What is React? A JavaScript library for building user interfaces
+- What is React? [React in 100 seconds](https://www.youtube.com/watch?v=Tn6-PIqc4UM)
   - Main concepts: https://reactjs.org/docs/hello-world.html
   - React tutorial: https://reactjs.org/tutorial/tutorial.html
 - Componentes and properties (props)
@@ -16,3 +16,7 @@ Starter project for a React app using:
 - Rendering lists 
 - Component libraries (E.g. [Equinor Design System](https://eds-storybook-react.azurewebsites.net/))
 - Data fetching (using [Swr](https://swr.vercell.app) and [DummyJSON](https://dummyjson.com))
+
+## Edit on ✏️
+- Stackblitz: https://stackblitz.com/github/maattss/react-introduction
+- Github CodeSpaces: https://maattss-react-introduction-7wv46qg424wj.github.dev/
