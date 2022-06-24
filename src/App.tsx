@@ -4,7 +4,7 @@ import { User } from './components/UserDisplay/User';
 import { UserDisplay } from './components/UserDisplay/UserDisplay';
 import { Counter } from './components/Counter/Counter';
 import { Typography } from '@equinor/eds-core-react';
-import { FetchSomeDataComponent } from './components/FetchSomeData/FetchSomeData';
+import { FetchSomeData } from './components/FetchSomeData/FetchSomeData';
 
 function App() {
   const [user, _] = useState<User>({ name: 'Mats', age: 28 });
@@ -30,7 +30,7 @@ function App() {
       <Typography variant="h2" color="white">
         Fetched data
       </Typography>
-      <FetchSomeDataComponent />
+      <FetchSomeData />
     </div>
   );
 }

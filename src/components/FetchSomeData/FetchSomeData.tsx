@@ -1,19 +1,28 @@
-import { CircularProgress, DotProgress, Typography } from '@equinor/eds-core-react';
-import useSWR from 'swr';
+import { DotProgress, Typography } from '@equinor/eds-core-react';
 import { AllProducts } from './Types';
+import useSWR from 'swr';
 
-export const FetchSomeDataComponent = () => {
-  const fetcher = (url: string) => fetch(url).then((r) => r.json());
+export const FetchSomeData = () => {
+  async function fetcher(url: string) {
+    const r = await fetch(url);
+    return await r.json();
+  }
 
-  const { data, error } = useSWR<string, AllProducts>(
-    'https://dummyjson.com/products',
+  const { data, error, isValidating } = useSWR<AllProducts>(
+    `https://dummyjson.com/products`,
     fetcher,
   );
 
   if (error) return <Typography color="white">Failed to load</Typography>;
-  if (!data) return <DotProgress size={48} />;
+  if (!data && isValidating) return <DotProgress size={48} />;
 
-  console.log('Data from dummyJson. 30 products', data);
-
-  return <div>{/* TOOD: Insert products */}</div>;
+  return (
+    <>
+      {data?.products.map((product, index) => (
+        <Typography key={index} color="white">
+          Title: {product.title}
+        </Typography>
+      ))}
+    </>
+  );
 };
