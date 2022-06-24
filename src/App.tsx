@@ -1,14 +1,15 @@
 import './App.css';
-import { Button, Typography } from '@equinor/eds-core-react';
 import { useState, useEffect } from 'react';
-import { User } from './User';
-import { UserComponent } from './UserComponent';
+import { User } from './components/UserDisplay/User';
+import { UserDisplay } from './components/UserDisplay/UserDisplay';
+import { Counter } from './components/Counter/Counter';
+import { Typography } from '@equinor/eds-core-react';
+import { FetchSomeDataComponent } from './components/FetchSomeData/FetchSomeData';
 
 function App() {
-  const [count, setCount] = useState(0);
-  const [user, setUser] = useState<User>({ name: 'Mats', age: 28 });
+  const [user, _] = useState<User>({ name: 'Mats', age: 28 });
 
-  let someData;
+  let someData: string | undefined;
 
   useEffect(() => {
     // Do async call
@@ -19,16 +20,17 @@ function App() {
     // Do a lot of stuff when someData changes
   }, [someData]);
 
-  const chosenColor = count === 1 ? 'white' : 'yellow';
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <Button onClick={() => setCount((count) => count + 1)}>Increment</Button>
-
-        <Typography style={{ color: chosenColor }}>Count is: {count}</Typography>
-        <UserComponent bestUser={user} />
-      </header>
+    <div className="App-header">
+      <Typography variant="h1" color="white">
+        React introduction
+      </Typography>
+      <Counter />
+      <UserDisplay bestUser={user} />
+      <Typography variant="h2" color="white">
+        Fetched data
+      </Typography>
+      <FetchSomeDataComponent />
     </div>
   );
 }
